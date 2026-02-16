@@ -1,0 +1,14 @@
+
+import numpy as np
+import pandas as pd
+df=pd.read_csv('grocerystore.csv')
+print(df.head())
+total=df['Sales'].sum()
+print("The total Customer Sales is:",total)
+discount = (df['Sales'] *( df['Discount']/100))
+a_d=df['Sales']-discount
+print(a_d)
+tax=a_d*(df['Tax']/100)
+print(tax)
+Final=a_d+tax
+print("The Final Amount after deduced with Discount and Tax is:",Final)
